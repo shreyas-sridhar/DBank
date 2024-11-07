@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBank Interface</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        if (typeof window.ethereum !== 'undefined') {
+            console.log('MetaMask is installed!');
+        }
+        import Web3 from 'web3';
+    </script>
+</head>
+<body>
+    <h1>DBank Interface</h1>
+    <div id="wallet">
+        <button onclick="connectWallet()">Connect Wallet</button>
+    </div>
+    <div>
+        <h2>Create User</h2>
+        <input id="newUserAddress" type="text" placeholder="Enter address">
+        <input id="initialBalance" type="number" placeholder="Initial balance">
+        <button onclick="createUser()">Create User</button>
+    </div>
+    <div>
+        <h2>Transaction</h2>
+        <input id="fromAddress" type="text" placeholder="From address">
+        <input id="toAddress" type="text" placeholder="To address">
+        <input id="transferAmount" type="number" placeholder="Amount">
+        <button onclick="performTransaction()">Send</button>
+    </div>
+    <div>
+        <h2>Deposit</h2>
+        <input id="depositAmount" type="number" placeholder="Amount to deposit">
+        <button onclick="deposit()">Deposit</button>
+    </div>
+    <div>
+        <h2>Check Balance</h2>
+        <input id="balanceAddress" type="text" placeholder="Enter address to check">
+        <button onclick="checkBalance()">Check Balance</button>
+        <p id="balanceOutput"></p>
+    </div>
+    <script src="web3.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
